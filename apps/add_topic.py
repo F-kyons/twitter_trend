@@ -1,7 +1,5 @@
 # coding: utf-8
 
-import csv
-import pandas as pd
 import streamlit as st
 from .libs import get_tweet, analysis_tweet
 
