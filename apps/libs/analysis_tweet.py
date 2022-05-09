@@ -15,7 +15,7 @@ def plot_wordcloud(word_dict,topic):
     '''
     受け取ったワード辞書からWordCloudを利用して画像出力する
     '''
-    font_path = r"/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/matplotlib/mpl-data/fonts/ttf/ipaexg.ttf"
+    font_path = r"./apps/setting/ipaexg.ttf"
     wc= WordCloud(background_color='white', colormap='Set2', font_path=font_path , width=480, height=320).fit_words(word_dict)
     plt.imshow(wc)
     plt.xticks([])
@@ -141,7 +141,7 @@ def get_tweet_data(topic):
     doc.append([doc_1,doc_2,doc_3,doc_4])
 
     # 形態素分析
-    mecab = MeCab.Tagger('-d /usr/local/lib/mecab/dic/mecab-ipadic-neologd')
+    mecab = MeCab.Tagger('-d ./apps/setting/mecab-ipadic-neologd')
 
     # 全データ(4週分)から各週の単語リストを作成
     dict_list = []
