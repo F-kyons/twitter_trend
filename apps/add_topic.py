@@ -145,7 +145,7 @@ def app():
                     if st.button('ツイートを取得'):
                         tweet_box = st.empty()
                         if len(st.session_state[f'topic_{topic}_account_list']) == account_num:
-                            tweet_box.success('データを取得しています...')
+                            tweet_box.info('データを取得しています...')
                             if not topic in st.session_state.topic_list:
                                 st.session_state.topic_list.append(topic)
                             get_tweet.write_topic_to_csv(st.session_state.topic_list)
