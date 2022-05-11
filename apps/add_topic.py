@@ -25,7 +25,7 @@ def app():
                 st.session_state[f'topic_{topic}'] = topic
 
             if 'topic_list' not in st.session_state:
-                st.session_state['topic_list'] = ['選択してください']
+                st.session_state['topic_list'] = topic_list
 
             if f'topic_{topic}_account_list' not in st.session_state :
                 st.session_state[f'topic_{topic}_account_list'] = []
