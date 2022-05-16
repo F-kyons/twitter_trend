@@ -141,7 +141,9 @@ def get_tweet_data(topic):
     doc.append([doc_1,doc_2,doc_3,doc_4])
 
     # 形態素分析
-    mecab = MeCab.Tagger('./apps/setting/mecab-ipadic-neologd')
+    # '-d /usr/local/lib/mecab/dic/mecab-ipadic-neologd'
+    # mecab = MeCab.Tagger('./apps/setting/mecab-ipadic-neologd')
+    mecab = MeCab.Tagger('-d /usr/local/lib/mecab/dic/mecab-ipadic-neologd')
 
     # 全データ(4週分)から各週の単語リストを作成
     dict_list = []
