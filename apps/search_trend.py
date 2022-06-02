@@ -28,7 +28,8 @@ def app():
 
             # トレンドワードの表を埋め込む
             df_trend = analysis_tweet.create_dataframe(trend_word_list)
-            st.write(df_trend)
+            # st.write(df_trend)
+            st.table(df_trend)
 
             with col2:
                 initial_value = "キーワードを入力"
@@ -45,7 +46,7 @@ def app():
                             tweet = tweet + analysis_tweet.get_tweet_html(tweet_account[0],tweet_account[1])
 
                     st.write('投稿一覧')
-                    stc.html(tweet,height=560,scrolling=True)
+                    stc.html(tweet,height=700,scrolling=True)
                 
                 elif search_text == initial_value:
                     pass

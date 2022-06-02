@@ -2,6 +2,7 @@
 
 import streamlit as st
 from .libs import get_tweet, analysis_tweet
+st.set_page_config(layout="wide")
 
 def app():
     '''
@@ -11,7 +12,7 @@ def app():
     if st.button('更新'):
         pass
     initial_value = ''
-    account_num = 1
+    account_num = 10
     topic = st.text_input('トピックを追加', value=initial_value)
     account = st.text_input('アカウントを追加( @を除く )', value=initial_value)
     col1, col2 = st.columns(2)

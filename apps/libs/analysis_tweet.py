@@ -79,14 +79,14 @@ def get_tweet_data(topic):
     '''データ整形
     10アカウントの4週分のツイートから1週間分ずつ抜き取りまとめる→4つの配列となりそれぞれをDocとする(rangeは(1,11))'''
     one_term = 7*24*60*60 # 1週間
-    start_time = datetime.strptime('2022-04-22 00:00:00', '%Y-%m-%d %H:%M:%S')
+    start_time = datetime.strptime('2022-05-20 00:00:00', '%Y-%m-%d %H:%M:%S')
     doc_1 = []
     doc_2 = []
     doc_3 = []
     doc_4 = []
     doc = []
     account_list = []
-    account_num = 1
+    account_num = 10
     print(f'Search trend word in {topic}....')
 
     for i in range(1,account_num+1):
@@ -142,8 +142,8 @@ def get_tweet_data(topic):
 
     # 形態素分析
     # '-d /usr/local/lib/mecab/dic/mecab-ipadic-neologd'
-    # mecab = MeCab.Tagger('./apps/setting/mecab-ipadic-neologd')
-    mecab = MeCab.Tagger('-r ./apps/setting/mecabrc -d ./apps/setting/ipadic')
+    mecab = MeCab.Tagger('-d /usr/local/lib/mecab/dic/mecab-ipadic-neologd')
+    # mecab = MeCab.Tagger('-r ./apps/setting/mecabrc -d ./apps/setting/ipadic')
 
     # 全データ(4週分)から各週の単語リストを作成
     dict_list = []
